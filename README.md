@@ -1,51 +1,51 @@
-# tensorflow-image-classifier
-<img src="https://github.com/koflerm/tensorflow-image-classifier/blob/master/image.png?raw=true" />
-<br/>
-Described here at the bottom half:<br/>
-https://medium.com/@m_ko/deep-learning-with-tensorflow-part-2-image-classification-58fcdffa7b84
-<br/><br/>
-A generic image classifier program using Tensorflow (https://www.tensorflow.org/) and the pre-trained Deep Learning Convolutional Neural Network model called Inception (https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html).
+# impact
+LICENSE: https://github.com/burliEnterprises/tensorflow-image-classifier  
+  
+https://towardsdatascience.com/deep-learning-with-tensorflow-part-4-face-classification-and-video-inputs-fa078f22c1e5  
+  
+http://www.talkapps.org/bulk-image-downloader  
 
-This model has been pre-trained for the  ImageNet (http://image-net.org/) data, it can differentiate between 1,000 different classes
-The program applies Transfer Learning to this existing model and re-trains it to classify a new set of images.
+https://js.tensorflow.org/  
+    
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0  
+  
+  
 
-This is a generic setup and can be used to classify almost any kind of image. 
+  
+# make it work
 
-## Installation
-Make sure you have Python (https://www.python.org/) installed, then install Tensorflow (https://www.tensorflow.org/install/) on your system, and clone this repo.
+## actually the images are downloaded alreay, so you do not need this part
+Download the `builk-image-downloader`. Then google and search for `bill gates`, `steve jobs`, `markzuckerberg` in the images tab, choose the `tools` => `type` => `face`, at this point click the `bulk image downloader`, select `current tab`, then it is will select all, so first click `invert selection`, then select minimum 20 pages, that is only the given person and it will be in the `Downloads` folder and it will be like `image.jpg`, `image(1).jpg`, select these and save to `tensorflow-images-classifier/training_dataset/name-of-person`.  
+  
+So you should have all 3 people at least each 20 pictures. Now let's train.   
 
-<br/>
+## train
 
-## Usage
+https://www.tensorflow.org/hub/tutorials/image_retraining  
+  
+```bash
+sudo apt install python3-setuptools python3-pip
+pip3 install tensorflow tensorflow_hub
 
-The usage is described in this article at the bottom half, simply follow the steps:<br/>
-https://medium.com/@m_ko/deep-learning-with-tensorflow-part-2-image-classification-58fcdffa7b84
-<br/>
 
-If you wanted to use a video as input and look at it frame-by-frame, check out this repository:
-https://github.com/koflerm/tensorflow-video-classifier
+./train.sh
 
-</br>
-## License
-MIT License
+./classify.py validate-images/gates1.jpg
+./classify.py validate-images/gates2.jpg
+./classify.py validate-images/gates3.jpg
+./classify.py validate-images/gates4.jpg
+./classify.py validate-images/gates5.jpg
+./classify.py validate-images/gates6.jpg
+./classify.py validate-images/gates7.jpg
+./classify.py validate-images/gates8.jpg
 
-Copyright (c) 2017 Matteo Kofler
+./classify.py validate-images/zuker1.jpg
+./classify.py validate-images/zuker2.jpg
+./classify.py validate-images/zuker3.jpg
+./classify.py validate-images/zuker4.jpg
+./classify.py validate-images/zuker5.jpg
+./classify.py validate-images/zuker6.jpg
+./classify.py validate-images/zuker7.jpg
+./classify.py validate-images/zuker8.jpg
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
+```
