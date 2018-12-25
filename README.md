@@ -9,8 +9,8 @@ https://js.tensorflow.org/
     
 https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0  
   
+https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html   
   
-
   
 # make it work
 
@@ -27,7 +27,7 @@ https://www.tensorflow.org/hub/tutorials/image_retraining
 sudo apt install python3-setuptools python3-pip
 pip3 install tensorflow tensorflow_hub
 
-
+curl -LJO https://raw.githubusercontent.com/googlecodelabs/tensorflow-for-poets-2/master/scripts/retrain.py
 ./train.sh
 
 ./classify.py validate-images/gates1.jpg
